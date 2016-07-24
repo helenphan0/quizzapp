@@ -1,7 +1,9 @@
 $(document).ready(function() {
 	$('.questions').hide();
 	$('.progress').hide();
-	var i = 1;
+	var i = parseInt($('.questionNum').html());
+	var CorrectCount = parseInt($('.correct').html());
+	var WrongCount = parseInt($('.wrong').html());
 	$('#begin').click(function() {
 		$('.begin').hide();
 		$('.progress').show();
@@ -9,10 +11,8 @@ $(document).ready(function() {
 		askQ(i);
 	});
 
-	$('#submit').click(function(){
-		checkAns(i);
-		event.preventDefault();
-	});
+	checkAns(i)
+	next(i);
 
 		function askQ(i) {
 			$('.questiontitle').text(Questions[i]);
@@ -20,26 +20,35 @@ $(document).ready(function() {
 			$('#choice2').text(Choice2[i]);
 			$('#choice3').text(Choice3[i]);
 			$('#choice4').text(Choice4[i]);
-
 		};
 
 		function checkAns(i) {
-			var x = $('input:checked').val();
-			if (x = Answers[i]) {
-				$(this).closest('span').append(' <--- Correct!');
-			}
-			else {
-				$(this).closest('span').append(' <-- Incorrect. ' + 'The correct choice is: ' + Answers[i]);
-			};
-			i += 1;
-			askQ(i);
 			$('#submit').click(function(){
-				checkAns(i);
+				var y = $('input:checked');
+				var x = y.val();
+				if (x == Answers[i]) {
+					//	y.closest('span').append(' <--- Correct!');
+					alert ('correct');
+				}
+				else {
+					//	y.closest('span').append(' <-- Incorrect. ' + 'The correct choice is: ' + Answers[i]);
+					alert ('wrong');
+				};
 				event.preventDefault();
 			});
 		};
 
 		
+		function next(i) {
+			$('#next').click(function(){
+				i += 1;
+				askQ(i);
+				checkAns(i);
+
+			});
+		};
+
+
 
 
 	var Questions = {
