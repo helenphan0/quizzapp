@@ -1,0 +1,46 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+}
+
+h2, p {
+	text-align: center;
+}
+
+#form {
+	margin-top: 45px;
+}
+
+button {
+	display: block;
+	width: 100px;
+	height: 40px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+section {
+	margin-top: 65px;
+	margin-right: auto;
+	margin-left: auto;
+	width: 600px;
+	border: 1px solid grey;
+	padding: 50px;
+}
+
+input {
+	width: 25px;
+	margin-bottom: 15px;
+}
+
+.progress {
+	top: 10px;
+	float: right;
+}
+
+li {
+	list-style-type: none;
+}

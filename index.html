@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Penny Dreadful Quizz</title>
+		<!-- Meta Tags -->
+		<meta charset="utf-8">
+		<!-- Stylesheets -->
+ 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+		<link rel="stylesheet" href="main.css"> 
+	</head>
+	<body>
+
+
+	<main>
+		<section>
+			<div class="begin">
+				<h2>Penny Dreadful Quiz</h2>
+				<p>Test your knowledge on Showtime's Victorian Era horror series, Penny Dreadful.</p> 
+				<button id="begin" type="button">Begin</button>
+			</div>
+
+			<div class="progress">
+				<div>Correct: <span class="correct">0</span>  Wrong: <span class="wrong">0</span></div>
+			</div>
+
+			<div class="questions">
+				<form  name="questions" id="form">
+				 	<h3><span class="questiontitle">Question 1</span></h3>
+	           		<label for="choice"></label><input type="radio" name="choice" class="choice2" value='1'><span id="choice1"></span><br>
+	           		<input type="radio" name="choice" class="choice2" value='2'><span id="choice2"></span><br>
+	           		<input type="radio" name="choice" class="choice3" value='3'><span id="choice3"></span><br>
+	           		<input type="radio" name="choice" class="choice4" value='4'><span id="choice4"></span><br>
+
+						<button type="submit" id="submit">Submit</button>
+			</form>
+			</div>
+		</section>
+
+
+
+	</main>
+
+
+		<script src="https://code.jquery.com/jquery.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+	</body>
+</html>
