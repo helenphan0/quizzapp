@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$('.questions').hide();
 	$('.progress').hide();
-	var i = parseInt($('.questionNum').html());
+	var i = 1;
 	var CorrectCount = parseInt($('.correct').html());
 	var WrongCount = parseInt($('.wrong').html());
 	$('#begin').click(function() {
@@ -11,10 +11,27 @@ $(document).ready(function() {
 		askQ(i);
 	});
 
-	checkAns(i)
-	next(i);
+	$('#submit').click(function(){
+	 	var y = $('input:checked');
+		checkAns(y);
+	});
+
+	$('#next').click(function(){
+		if (i == 10) {
+			return false;
+		};
+		if ($('.post-text').text() == '' && $('#submit:active')) {
+			return false;
+		};
+			i += 1;
+			$('.questionNum').text(i);
+			askQ(i);
+			$('#submit:submit').removeAttr("disabled");
+			$('input:checked').prop('checked',false);		
+	});
 
 		function askQ(i) {
+			$('.post-text').text('');
 			$('.questiontitle').text(Questions[i]);
 			$('#choice1').text(Choice1[i]);
 			$('#choice2').text(Choice2[i]);
@@ -22,33 +39,20 @@ $(document).ready(function() {
 			$('#choice4').text(Choice4[i]);
 		};
 
-		function checkAns(i) {
-			$('#submit').click(function(){
-				var y = $('input:checked');
-				var x = y.val();
-				if (x == Answers[i]) {
-					//	y.closest('span').append(' <--- Correct!');
-					alert ('correct');
-				}
-				else {
-					//	y.closest('span').append(' <-- Incorrect. ' + 'The correct choice is: ' + Answers[i]);
-					alert ('wrong');
-				};
-				event.preventDefault();
-			});
+		function checkAns(y) {
+			if (y.val() == Answers[i]) {
+				y.siblings('.post-text').text('Correct!');
+				CorrectCount += 1;
+				$('.correct').text(CorrectCount);
+			}
+			else {
+				y.siblings('.post-text').text('Wrong. See #' + Answers[i]);
+				WrongCount += 1;
+				$('.wrong').text(WrongCount);
+			};
+			$('#submit:submit').attr("disabled", true);
+			event.preventDefault();	
 		};
-
-		
-		function next(i) {
-			$('#next').click(function(){
-				i += 1;
-				askQ(i);
-				checkAns(i);
-
-			});
-		};
-
-
 
 
 	var Questions = {
@@ -91,7 +95,7 @@ $(document).ready(function() {
 	};
 
 	var Choice3 = {
-		1: "Dolls",
+		1: "Dolls.",
 		2: "The Bible.",
 		3: "He was burned.",
 		4: "A seance.",
