@@ -40,7 +40,7 @@ $(document).ready(function() {
 		};
 
 		function checkAns(y) {
-			if (y.val() == Answers[i]) {
+			if (y.val() == Answers[i]) {;
 				y.siblings('.post-text').text('Correct!');
 				CorrectCount += 1;
 				$('.correct').text(CorrectCount);

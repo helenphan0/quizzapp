@@ -1,8 +1,24 @@
 * {
 	box-sizing: border-box;
+	color: white;
+	font-family: 'Crimson Text', serif;
 }
 
 body {
+	background-image: url('penny-dreadful1.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: #3B3B3B;
+}
+
+img {
+	width: 98%;
+}
+
+.image {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 h2, h3, .begin>p {
@@ -10,8 +26,24 @@ h2, h3, .begin>p {
 	margin: 20px;
 }
 
+h2 {
+	font-size: 30px;
+	font-family: 'Parisienne', cursive;
+}
+
 p {
 	margin: 7px;
+	font-size: 18px;
+}
+
+.correct-ans {
+	font-color: #FFD700;
+	font-weight: bold;
+}
+
+.wrong-ans {
+	font-color: #CD3700;
+	font-weight: bold;
 }
 
 button {
@@ -19,6 +51,7 @@ button {
 	display: block;
 	width: 100px;
 	height: 40px;
+	color: #3B3B3B;
 	margin-right: auto;
 	margin-left: auto;
 	user-select: none;
@@ -29,12 +62,15 @@ button {
 }
 
 section {
-	margin-top: 65px;
+	margin-top: 75px;
 	margin-right: auto;
 	margin-left: auto;
 	width: 600px;
-	height: 420px;
-	border: 1px solid grey;
+	height: 440px;
+	border: 2px #666666;
+	border-style: double;
+	border-radius: 10px;
+	background-color: black;
 	padding: 45px;
 }
 
@@ -52,6 +88,6 @@ input {
 .post-text {
 	display: inline-block;
 	font-style: italic;
-	font-size: 12px;
+	font-size: 15px;
 	margin-left: 15px;
 }
