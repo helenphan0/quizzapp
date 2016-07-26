@@ -8,18 +8,21 @@ $(document).ready(function() {
 		$('.begin').hide();
 		$('.progress').show();
 		$('.questions').show();
+		$('#reset').hide();
 		askQ(i);
 	});
 
 	$('#submit').click(function(){
 	 	var y = $('input:checked');
-		checkAns(y);
+	 	if (y.length === 1) {
+			checkAns(y);
+		}
+		else {
+			return false;
+		};
 	});
 
 	$('#next').click(function(){
-		if (i == 10) {
-			return false;
-		};
 		if ($('.post-text').text() == '' && $('#submit:active')) {
 			return false;
 		};
@@ -27,7 +30,16 @@ $(document).ready(function() {
 			$('.questionNum').text(i);
 			askQ(i);
 			$('#submit:submit').removeAttr("disabled");
-			$('input:checked').prop('checked',false);		
+			$('input:checked').prop('checked',false);
+		if (i == 10) {
+			$('#next').hide();
+			$('#reset').show();
+			return false;
+		};		
+	});
+
+	$('#reset').click(function() {
+		 location.reload();
 	});
 
 		function askQ(i) {

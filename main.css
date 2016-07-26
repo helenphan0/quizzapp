@@ -6,10 +6,12 @@
 
 body {
 	background-image: url('penny-dreadful1.jpg');
+	min-height: 645px;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-color: #3B3B3B;
+	background-color: black;
 }
+
 
 img {
 	width: 98%;
@@ -65,8 +67,9 @@ section {
 	margin-top: 75px;
 	margin-right: auto;
 	margin-left: auto;
-	width: 600px;
-	height: 440px;
+	max-width: 600px;
+	width: 90%;
+	height: 450px;
 	border: 2px #666666;
 	border-style: double;
 	border-radius: 10px;
@@ -89,5 +92,5 @@ input {
 	display: inline-block;
 	font-style: italic;
 	font-size: 15px;
-	margin-left: 15px;
+	margin-left: 20px;
 }
