@@ -50,7 +50,7 @@ p {
 
 button {
 	position: relative;
-	display: block;
+	display: inline-block;
 	width: 100px;
 	height: 40px;
 	color: #3B3B3B;
@@ -61,6 +61,7 @@ button {
 
 .questButtons {
 	height: 85px;
+	text-align: center;
 }
 
 section {
