@@ -1,11 +1,11 @@
 * {
 	box-sizing: border-box;
-	color: white;
 	font-family: 'Crimson Text', serif;
 }
 
 body {
 	background-image: url('penny-dreadful1.jpg');
+	color: white;
 	min-height: 645px;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -28,6 +28,11 @@ h2, h3, .begin>p {
 	margin: 20px;
 }
 
+h3.question {
+	font-size: 21px;
+	margin: 33px;
+}
+
 h2 {
 	font-size: 30px;
 	font-family: 'Parisienne', cursive;
@@ -39,12 +44,12 @@ p {
 }
 
 .correct-ans {
-	font-color: #FFD700;
+	color: lightgreen;
 	font-weight: bold;
 }
 
 .wrong-ans {
-	font-color: #CD3700;
+	color: #CD3700;
 	font-weight: bold;
 }
 
@@ -60,7 +65,6 @@ button {
 }
 
 .questButtons {
-	height: 85px;
 	text-align: center;
 }
 
@@ -92,6 +96,6 @@ input {
 .post-text {
 	display: inline-block;
 	font-style: italic;
-	font-size: 15px;
+	font-size: 17px;
 	margin-left: 20px;
 }

@@ -52,13 +52,14 @@ $(document).ready(function() {
 		};
 
 		function checkAns(y) {
-			if (y.val() == Answers[i]) {;
-				y.siblings('.post-text').text('Correct!');
+			y.siblings('.post-text').removeClass('correct-ans wrong-ans');
+			if (y.val() == Answers[i]) {
+				y.siblings('.post-text').addClass('correct-ans').text('Correct!');
 				CorrectCount += 1;
 				$('.correct').text(CorrectCount);
 			}
 			else {
-				y.siblings('.post-text').text('Wrong. See #' + Answers[i]);
+				y.siblings('.post-text').addClass('wrong-ans').text('Wrong. See #' + Answers[i]);
 				WrongCount += 1;
 				$('.wrong').text(WrongCount);
 			};
